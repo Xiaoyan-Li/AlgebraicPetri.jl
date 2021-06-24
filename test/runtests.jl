@@ -1,6 +1,6 @@
 using Test
 
-using Petri
+import Petri
 using LabelledArrays
 using AlgebraicPetri
 using AlgebraicPetri.Epidemiology
@@ -23,4 +23,14 @@ end
 
 @testset "Epidemiology" begin
     include("epidemiology.jl")
+end
+
+@testset "BilayerNetworks" begin
+  include("bilayernetworks.jl")
+end
+
+if VERSION >= v"1.3.0"
+  @testset "Catalyst Tooling" begin
+    include("CatalystInterop.jl")
+  end
 end
